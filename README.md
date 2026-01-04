@@ -1,4 +1,4 @@
-# persist-scan
+# 🛡️🔍 persist-scan
 
 persist-scan is a cross-platform, read-only persistence detection tool written in Rust.
 It inventories common startup and persistence mechanisms on Linux and Windows, applies a YAML-based rules engine, and highlights system changes using a baseline/diff workflow.
