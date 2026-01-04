@@ -1,0 +1,16 @@
+id: WIN_RUNKEY_SUSPICIOUS_PATH
+title: "Run key command points to suspicious location"
+os: windows
+severity: medium
+confidence: medium
+tags: [persistence, registry, suspicious-path]
+rationale: "Run keys launching from Temp/Downloads or user-writable locations are a common risk signal."
+check:
+  kind: windows_run_key
+match:
+  any_command_contains:
+    - "\\AppData\\Local\\Temp\\"
+    - "\\Downloads\\"
+  any_path_contains:
+    - "\\AppData\\Local\\Temp\\"
+    - "\\Downloads\\"

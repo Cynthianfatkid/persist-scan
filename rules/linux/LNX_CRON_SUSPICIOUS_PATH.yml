@@ -1,0 +1,15 @@
+id: LNX_CRON_SUSPICIOUS_PATH
+title: "User cron command references suspicious locations"
+os: linux
+severity: medium
+confidence: medium
+tags: [persistence, cron, suspicious-path]
+rationale: "Cron entries executing from /tmp, /dev/shm, or hidden cache dirs are higher risk."
+check:
+  kind: linux_user_crontab
+match:
+  any_command_contains:
+    - "/tmp/"
+    - "/dev/shm/"
+    - "/.cache/"
+    - "/.local/share/"

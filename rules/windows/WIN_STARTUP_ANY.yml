@@ -1,0 +1,10 @@
+id: WIN_STARTUP_ANY
+title: "Startup folder item present"
+os: windows
+severity: low
+confidence: high
+tags: [persistence, startup-folder]
+rationale: "Startup folder items run on login. Inventory helps identify unexpected entries."
+check:
+  kind: windows_startup_folder
+match: {}

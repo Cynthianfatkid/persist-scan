@@ -1,0 +1,10 @@
+id: LNX_AUTOSTART_ANY
+title: "Autostart entry present"
+os: linux
+severity: low
+confidence: high
+tags: [persistence, autostart]
+rationale: "Autostart entries run programs on user login. Not inherently malicious, but worth inventory."
+check:
+  kind: linux_autostart
+match: {}

@@ -1,0 +1,16 @@
+id: LNX_AUTOSTART_SUSPICIOUS_PATH
+title: "Autostart Exec path in suspicious location"
+os: linux
+severity: medium
+confidence: medium
+tags: [persistence, autostart, suspicious-path]
+rationale: "User-writable or transient locations are commonly abused for persistence."
+check:
+  kind: linux_autostart
+match:
+  any_path_prefix:
+    - "/tmp/"
+    - "/dev/shm/"
+  any_command_contains:
+    - "/.cache/"
+    - "/.local/share/"

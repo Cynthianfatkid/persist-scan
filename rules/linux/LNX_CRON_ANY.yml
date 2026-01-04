@@ -1,0 +1,10 @@
+id: LNX_CRON_ANY
+title: "User crontab entry present"
+os: linux
+severity: low
+confidence: medium
+tags: [persistence, cron]
+rationale: "Cron jobs provide scheduled execution. Inventory helps detect unexpected persistence."
+check:
+  kind: linux_user_crontab
+match: {}

@@ -1,0 +1,13 @@
+id: WIN_STARTUP_SUSPICIOUS_PATH
+title: "Startup folder item path looks suspicious"
+os: windows
+severity: low
+confidence: medium
+tags: [persistence, startup-folder, suspicious-path]
+rationale: "Executables or links originating from Temp/Downloads are worth a closer look."
+check:
+  kind: windows_startup_folder
+match:
+  any_path_contains:
+    - "\\AppData\\Local\\Temp\\"
+    - "\\Downloads\\"

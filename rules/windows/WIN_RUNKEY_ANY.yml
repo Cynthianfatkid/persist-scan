@@ -1,0 +1,10 @@
+id: WIN_RUNKEY_ANY
+title: "Run key entry present"
+os: windows
+severity: low
+confidence: high
+tags: [persistence, registry]
+rationale: "Run keys execute on login. Inventory helps detect unexpected startup items."
+check:
+  kind: windows_run_key
+match: {}
